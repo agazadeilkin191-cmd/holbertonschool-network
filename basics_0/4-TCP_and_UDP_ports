@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-netstat -lnt
-netstat -lnu
+netstat -tunlp
