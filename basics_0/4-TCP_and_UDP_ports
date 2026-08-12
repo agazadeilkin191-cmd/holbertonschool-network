@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-sudo ss -lntup
+sudo netstat -lpn
