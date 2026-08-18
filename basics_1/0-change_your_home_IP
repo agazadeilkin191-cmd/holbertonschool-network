@@ -3,9 +3,8 @@
 # - localhost resolves to 127.0.0.2
 # - facebook.com resolves to 8.8.8.8
 
-# Remove existing entries for localhost and facebook.com to prevent duplicates
-sudo sed -i '/\blocalhost\b/d' /etc/hosts
-sudo sed -i '/\bfacebook.com\b/d' /etc/hosts
+# Remove existing entries for localhost and facebook.com safely without busy error
+sudo grep -v -E '\blocalhost\b|\bfacebook.com\b' /etc/hosts | sudo tee /etc/hosts > /dev/null
 
 # Append the new configurations to the /etc/hosts file
 echo "127.0.0.2 localhost" | sudo tee -a /etc/hosts > /dev/null
